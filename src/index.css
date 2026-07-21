@@ -5,7 +5,7 @@
 @import "tailwindcss";
 
 /* Import Uwebly CSS Files */
-@import "stories.css";
+/* @import "stories.css";
 @import "navbar.css";
 @import "forms.css";
 @import "modal.css";
@@ -40,7 +40,7 @@
 @import "./components/chat/chat.css";
 @import "./components/chat/chat-options.css";
 @import "./components/chat/chat-groups.css";
-@import "./components/chat/chat-bg-modal.css";
+@import "./components/chat/chat-bg-modal.css"; */
 
 /* CSS Variables for Dark/Light Mode */
 :root {
