@@ -45,6 +45,7 @@
 /* CSS Variables for Dark/Light Mode */
 :root {
   --bg-color: #ffffff;
+  --bg-color-gradient: background: linear-gradient(311deg,rgba(254, 237, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
   --bg-color--share: background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 1) 0%,
@@ -71,6 +72,7 @@
 
 [data-theme="dark"] {
   --bg-color: #121212;
+  --bg-color-gradient: background: linear-gradient(311deg,rgba(59, 25, 59, 1) 0%, rgba(26, 26, 26, 1) 100%);
   --accent: #ff42f2;
   --bg-color-share: background: linear-gradient(
       0deg,
