@@ -45,7 +45,11 @@
 /* CSS Variables for Dark/Light Mode */
 :root {
   --bg-color: #ffffff;
-  --bg-color-gradient: background: linear-gradient(311deg,rgba(254, 237, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  --bg-color-gradient: background: linear-gradient(
+      311deg,
+      rgba(254, 237, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
   --bg-color--share: background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 1) 0%,
@@ -68,11 +72,17 @@
     );
   --check-bar-1: #e0e0e04f;
   --check-bar-2: #e0e0e04f;
+  --skeleton-bg: #e0e0e0;
+  --skeleton-shimmer: #f0f0f0;
 }
 
 [data-theme="dark"] {
   --bg-color: #121212;
-  --bg-color-gradient: background: linear-gradient(311deg,rgba(59, 25, 59, 1) 0%, rgba(26, 26, 26, 1) 100%);
+  --bg-color-gradient: background: linear-gradient(
+      311deg,
+      rgba(59, 25, 59, 1) 0%,
+      rgba(26, 26, 26, 1) 100%
+    );
   --accent: #ff42f2;
   --bg-color-share: background: linear-gradient(
       0deg,
@@ -89,6 +99,8 @@
   --hover-bg: #2a2a2a;
   --check-bar-1: #e0e0e04f;
   --check-bar-2: #e0e0e04f;
+  --skeleton-bg: #2a2a2a;
+  --skeleton-shimmer: #3a3a3a;
 }
 
 /* Global Styles */
@@ -1679,7 +1691,7 @@ main {
   animation: flipBack 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@keyframes flipBack { 
+@keyframes flipBack {
   0% {
     transform: scale(0.8) rotateY(-180deg);
     opacity: 1;
