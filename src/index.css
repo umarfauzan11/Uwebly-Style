@@ -1,48 +1,6 @@
-/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
-@import "tailwindcss";
-
-/* Import Uwebly CSS Files */
-/* @import "stories.css";
-@import "navbar.css";
-@import "forms.css";
-@import "modal.css";
-@import "ctaads.css";
-@import "post.css";
-@import "plus.css";
-@import "account.css";
-@import "skeletonloading.css";
-@import "stories.css";
-@import "settings.css";
-@import "ushweb.css";
-@import "support.css";
-@import "adspopup.css";
-@import "notification.css";
-@import "filter.css";
-@import "updates.css";
-@import "adsdashboard.css";
-@import "velora-button-assistant.css";
-@import "postcardmodal.css";
-@import "sidebarbadgeanimation.css";
-@import "flip-button.css";
-
-@import "message.css";
-@import "ScaleInDropdown.css";
-@import "badgepage.css";
-@import "src/postcardcarousel.css";
-@import "src/dashboardwelcome.css";
-@import "./components/chat/message-delete.css";
-@import "./components/chat/umset-modal.css";
-@import "./components/chat/logout-modal.css";
-@import "./components/chat/clean-chat-modal.css";
-@import "./components/chat/chat.css";
-@import "./components/chat/chat-options.css";
-@import "./components/chat/chat-groups.css";
-@import "./components/chat/chat-bg-modal.css"; */
-
-/* CSS Variables for Dark/Light Mode */
 :root {
   --bg-color: #ffffff;
   --bg-color-gradient: background: linear-gradient(
@@ -999,7 +957,7 @@ main {
 .mention-avatar {
   width: 42px;
   height: 42px;
-  border-radius: 50%;
+  border-radius: 40%;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -1299,7 +1257,6 @@ main {
 
 .report-btn-submit:hover:not(:disabled) {
   background: #ff2222;
-  box-shadow: 0 4px 16px rgba(255, 68, 68, 0.3);
 }
 
 .report-btn-submit:disabled {
@@ -1354,14 +1311,13 @@ main {
 
 .search-wrapper input {
   width: 100%;
-  padding: 10px 12px 10px 36px; /* kiri dikasih space buat icon */
+  padding: 10px 12px 10px 36px;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--card-bg);
   color: var(--text-color);
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .report-modal-overlay {
     padding: 0;
@@ -1386,18 +1342,6 @@ main {
     padding: 12px;
   }
 }
-
-/* Message Drawer Styles */
-/* .message-drawer-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  animation: fadeIn 0.2s ease;
-} */
 
 .message-drawer {
   position: fixed;
@@ -1634,18 +1578,6 @@ main {
   transform: scale(0.92);
 }
 
-/* .send-verification-pop::after {
-  content: "Try for Rp 0";
-  padding: 5px 9px;
-  position: absolute;
-  font-size: 0.7rem;
-  background-color: #3c98d6;
-  color: var(--text-color);
-  border-radius: 15px;
-  bottom: -19.2rem;
-  margin-left: 2.5rem;
-} */
-
 @keyframes scaleIn {
   from {
     transform: scale(0.85);
@@ -1686,7 +1618,6 @@ main {
   }
 }
 
-/* Animasi balik ke avatar KEO-502 */
 .profile-avatar {
   animation: flipBack 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
