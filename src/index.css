@@ -2,6 +2,7 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
 :root {
+  color-scheme: light;
   --bg-color: #ffffff;
   --bg-color-gradient: background: linear-gradient(
       311deg,
@@ -35,6 +36,7 @@
 }
 
 [data-theme="dark"] {
+  color-scheme: dark;
   --bg-color: #121212;
   --bg-color-gradient: background: linear-gradient(
       311deg,
