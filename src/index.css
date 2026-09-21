@@ -14,7 +14,7 @@
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 255, 255, 0) 100%
     );
-  --bg-color-blur: #ffffffa2;
+  --bg-color-blur: #ffffff8c;
   --bg-color-onboard: #ffffff;
   --text-color: #111111;
   --accent: #ff42f2;
@@ -50,7 +50,7 @@
       rgba(18, 18, 18, 1) 57%,
       rgba(18, 18, 18, 0) 100%
     );
-  --bg-color-blur: #121212c5;
+  --bg-color-blur: #121212af;
   --bg-color-onboard: #000000;
   --text-color: #ffffff;
   --card-bg: #121212;
