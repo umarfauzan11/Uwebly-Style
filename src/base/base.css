@@ -1,0 +1,54 @@
+/* Global Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  overscroll-behavior: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.explore-content {
+  padding: 1rem;
+  margin-left: 14rem;
+  margin-top: 5rem;
+}
+
+::selection {
+  background: #a4299c;
+  color: #000;
+}
+
+body,
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body.modal-open {
+  overflow: hidden;
+}

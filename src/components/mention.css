@@ -1,0 +1,98 @@
+/* ============================================
+   MENTION DROPDOWN
+   ============================================ */
+
+/* Container dropdown */
+.mention-dropdown {
+  position: absolute;
+  bottom: 370px;
+  left: 0;
+  width: 320px;
+  max-height: 260px;
+  overflow-y: auto;
+  background: var(--bg-color);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 8px;
+  z-index: var(--z-dropdown, 1050);
+  backdrop-filter: blur(10px);
+  animation: mentionFade 0.15s ease;
+}
+
+/* Scrollbar */
+.mention-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mention-dropdown::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+/* Item user */
+.mention-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* Hover */
+.mention-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Active keyboard selection */
+.mention-item.active {
+  border: 1px solid var(--accent);
+}
+
+/* Avatar */
+.mention-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 40%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Info */
+.mention-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Nama */
+.mention-name {
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* User tag */
+.mention-usertag {
+  color: #9ca3af;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Animasi muncul */
+@keyframes mentionFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
