@@ -1,0 +1,134 @@
+/* ============================================
+   RESPONSIVE UTILITIES & COMMON HELPERS
+   ============================================ */
+
+.fade-in {
+  margin-left: 14rem !important;
+}
+
+@media (max-width: 768px) {
+  .send-verification-pop::after {
+    display: none;
+  }
+
+  .fade-in {
+    margin-left: 0 !important;
+    padding: 1px;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .md\:hidden {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .md\:hidden {
+    display: none !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* Not Found Page Utilities */
+.notfound-page {
+  min-height: 100vh;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.notfound-container {
+  text-align: center;
+  max-width: 500px;
+}
+
+.notfound-code {
+  font-size: 120px;
+  font-weight: 900;
+  background: var(--text-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 16px 0;
+  line-height: 1;
+}
+
+.notfound-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 12px 0;
+}
+
+.notfound-description {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0 0 32px 0;
+  line-height: 1.5;
+  opacity: 0.5;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notfound-button {
+  padding: 8px 12px;
+  background-color: var(--border);
+  border: none;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .notfound-code {
+    font-size: 80px;
+  }
+
+  .notfound-title {
+    font-size: 22px;
+  }
+}
+
+.suggestion-close-btn {
+  opacity: 1;
+  font-size: 1.2rem;
+  position: absolute;
+  width: 1rem;
+  right: 6%;
+  top: 10%;
+  transform: translateY(-50%);
+}
+
+.suggestion-close-btn:hover {
+  opacity: 0.4;
+  font-size: 1.2rem;
+  position: absolute;
+  width: 1rem;
+  right: 6%;
+  top: 10%;
+  transform: translateY(-50%);
+}
+
+.cta-title {
+  font-size: 1.3rem !important;
+  color: white !important;
+  margin-bottom: 9px;
+  font-weight: 700;
+  text-align: left;
+  line-height: normal;
+}

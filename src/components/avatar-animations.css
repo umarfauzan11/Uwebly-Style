@@ -1,0 +1,38 @@
+/* ============================================
+   AVATAR FLIP & MODAL SHARE ANIMATIONS
+   ============================================ */
+
+.header-modal-share-umessage svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.flipped-card-avatar {
+  animation: flipIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes flipIn {
+  0% {
+    transform: scale(0.8) rotateY(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.profile-avatar {
+  animation: flipBack 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes flipBack {
+  0% {
+    transform: scale(0.8) rotateY(-180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+}

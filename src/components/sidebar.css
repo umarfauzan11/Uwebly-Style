@@ -1,0 +1,236 @@
+/* ============================================
+   SIDEBAR STYLES
+   ============================================ */
+
+.sidebar-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar-card-second {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.sidebar-header-suggest {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar-header-suggest h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.sidebar-see-all {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sidebar-following-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-user-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.sidebar-user-item:hover {
+  background: var(--hover-bg);
+}
+
+.sidebar-user-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 17px;
+  object-fit: cover;
+}
+
+.sidebar-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-user-name {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  width: 9ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-handle {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.sidebar-follow-btn {
+  padding: 6px 16px;
+  background: var(--text-color);
+  border: 1px solid var(--text-color);
+  color: var(--bg-color);
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.sidebar-follow-btn.following {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.sidebar-ad-content {
+  text-align: center;
+}
+
+.sidebar-ad-image {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+
+.sidebar-ad-content h5 {
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.sidebar-ad-content p {
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.sidebar-ad-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--text-color);
+  color: var(--bg-color);
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.sidebar-ad-btn:hover {
+  opacity: 0.8;
+}
+
+.sidebar-footer {
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.sidebar-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-footer-links a {
+  font-size: 0.8rem;
+  color: #666;
+  text-decoration: none;
+}
+
+.sidebar-footer-links a:hover {
+  text-decoration: underline;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.sidebar-copyright {
+  font-size: 0.75rem;
+  color: #999;
+  margin: 0;
+}
+
+.sidebar-copyright a {
+  font-size: 0.75rem;
+  color: #999;
+  margin: 0;
+}
+
+/* Sidebar Hashtags List */
+.sidebar-hashtags-list {
+  padding: 0.5rem;
+}
+
+.sidebar-hashtag-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-hashtag-item:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(2px);
+}
+
+.hashtag-rank {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.hashtag-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hashtag-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.hashtag-count {
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+}
+
+.hashtag-arrow {
+  color: var(--secondary-color);
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
