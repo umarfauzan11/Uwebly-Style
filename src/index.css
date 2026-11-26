@@ -10,7 +10,7 @@
   --color-input: var(--input-bg);
   --color-hover: var(--hover-bg);
   --color-text-main: var(--text-color);
-  --color-text-sub: var(--text-secondary);
+  --color-text-sec: var(--text-secondary);
   --color-text-mute: var(--text-muted);
   --color-accent: var(--accent);
   --color-border: var(--border);

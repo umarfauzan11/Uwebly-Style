@@ -160,7 +160,7 @@ const RADII_TOKENS = [
   { name: 'Radius LG', varName: '--radius-lg', value: '16px', desc: 'Modal container & banner' },
   { name: 'Radius XL', varName: '--radius-xl', value: '24px', desc: 'Camera modal & drawer' },
   { name: 'Radius Avatar', varName: '--radius-avatar', value: '40%', desc: 'Standar Squircle Bmdu' },
-  { name: 'Radius Full', varName: '--radius-full', value: '9999px', desc: 'Pills dan circular button' },
+  { name: 'Radius Full', varName: '--radius-full', value: '50%', desc: 'Pills dan circular button' },
 ]
 
 // ==========================================
@@ -248,7 +248,7 @@ function App() {
 
 
             <span className="px-2 py-0.5 text-[10px] font-bold bg-border/15 text-color border border-border">
-              v3.0 CDN
+              v3.0
             </span>
             <button
               onClick={() => setTheme(prev => (prev === 'light' ? 'dark' : 'light'))}
@@ -275,7 +275,7 @@ function App() {
               </p>
 
               {/* Quick Start CDN Box */}
-              <div className="border border-border bg-card rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <div className="border border-border bg-card rounded-xl p-3 sm:p-4 flex flex-row sm:flex-row items-center justify-center sm:items-center gap-3">
                 <div className="overflow-x-auto scrollbar-none font-mono text-xs text-text-main">
                   <span className="truncate overflow-x-auto">
                     &lt;link rel="stylesheet" href="https://style.uwebly.com/uwebly3.min.css" /&gt;
@@ -286,7 +286,7 @@ function App() {
                   className="flex items-center justify-center gap-2 px-4 py-2 bg-text-main text-canvas text-xs font-semibold rounded-lg hover:opacity-90 active:scale-95 shrink-0 cursor-pointer"
                 >
                   <CopyIcon className="w-3.5 h-3.5" />
-                  <span>Copy Link</span>
+                  <span className="!hidden md:!flex">Copy Link</span>
                 </button>
               </div>
             </div>
@@ -307,8 +307,8 @@ function App() {
       </section>
 
       {/* Main Tab Navigation */}
-      <div className="border-b rounded-xl border-border sticky top-16 z-[950] bg-bg-blur backdrop-blur-md">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex gap-1 sm:gap-2 overflow-x-auto scrollbar-none py-2">
+      <div className="border-b rounded-xl overflow-hidden border-border sticky top-16 z-[950] bg-bg-blur backdrop-blur-md">
+        <div className="max-w-6xl mx-auto px-4 justify-center sm:px-6 flex gap-1 sm:gap-2 overflow-x-auto scrollbar-none py-2">
           <button
             onClick={() => setActiveTab('tokens')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold  cursor-pointer shrink-0 ${activeTab === 'tokens'
@@ -317,7 +317,7 @@ function App() {
               }`}
           >
             <PaletteIcon className="w-4 h-4" />
-            <span>Design Tokens</span>
+            <span className="!hidden md:!flex">Design Tokens</span>
           </button>
 
           <button
@@ -328,7 +328,7 @@ function App() {
               }`}
           >
             <TypeIcon className="w-4 h-4" />
-            <span>Typography Tester</span>
+            <span className='!hidden md:!flex'>Typography Tester</span>
           </button>
 
           <button
@@ -339,7 +339,7 @@ function App() {
               }`}
           >
             <ComponentsIcon className="w-4 h-4" />
-            <span>Components & Code</span>
+            <span className='!hidden md:!flex'>Components & Code</span>
           </button>
 
           <button
@@ -350,7 +350,7 @@ function App() {
               }`}
           >
             <ShapesIcon className="w-4 h-4" />
-            <span>Squircle 40% Architecture</span>
+            <span className='!hidden md:!flex'>Squircle 40% Architecture</span>
           </button>
         </div>
       </div>
@@ -385,7 +385,7 @@ function App() {
                             className="w-10 h-10 rounded-lg border border-border shrink-0 transition-transform group-hover:scale-105"
                             style={{ backgroundColor: activeVal }}
                           ></div>
-                          <span className="text-text-muted uppercase self-start leading-none">
+                          <span className="text-text-sec uppercase self-start leading-none">
                             {activeVal}
                           </span>
                         </div>
@@ -422,13 +422,13 @@ function App() {
                     className="border border-border bg-card p-4 rounded-xl flex flex-col items-center text-center cursor-pointer hover:bg-hover  group"
                   >
                     <div
-                      className="w-16 h-16 border-2 border-accent bg-accent/10 mb-3 transition-transform group-hover:scale-105 flex items-center justify-center font-mono text-[11px] font-bold text-accent"
+                      className="w-16 h-16 border-2 border-text bg-[var(--text-color)] mb-3 transition-transform group-hover:scale-105 flex items-center justify-center font-mono text-[11px] font-bold text-[var(--bg-color)]"
                       style={{ borderRadius: r.value }}
                     >
                       {r.value}
                     </div>
                     <div className="font-bold text-xs text-text-main">{r.name}</div>
-                    <div className="font-mono text-[11px] text-accent">{r.varName}</div>
+                    <div className="font-mono text-[11px] text-text">{r.varName}</div>
                     <div className="text-[10px] text-text-mute mt-1">{r.desc}</div>
                   </div>
                 ))}
@@ -514,15 +514,12 @@ function App() {
 
               {/* Font Token Quick Details */}
               <div className="flex items-center justify-between flex-wrap gap-2 text-xs pt-2">
-                <div className="font-mono text-text-sub">
-                  Token: <code className="text-accent font-bold">var(--font-sans)</code>
-                </div>
                 <button
                   onClick={() => copyToClipboard('font-family: var(--font-sans);', 'Font family CSS')}
                   className="inline-flex items-center gap-1.5 text-xs text-text-main hover:underline cursor-pointer font-medium"
                 >
                   <CopyIcon className="w-3.5 h-3.5" />
-                  <span>Copy CSS Snippet</span>
+                  <span className='md:hidden'>Copy CSS Snippet</span>
                 </button>
               </div>
             </div>
@@ -578,17 +575,55 @@ function App() {
                 <div className="flex items-center gap-1 bg-input p-1 rounded-lg border border-border">
                   <button
                     onClick={() => setComponentCodeTab(prev => ({ ...prev, buttons: 'preview' }))}
-                    className={`px-2.5 py-1 text-xs font-semibold rounded cursor-pointer ${componentCodeTab.buttons === 'preview' ? 'bg-text-main text-canvas' : 'text-text-sub'}`}
+                    title="Preview"
+                    className={`px-2 md:px-2.5 py-1 text-xs font-semibold rounded-full cursor-pointer flex items-center justify-center ${componentCodeTab.buttons === 'preview' ? 'bg-text-main text-canvas' : 'text-text-sub'
+                      }`}
                   >
-                    Preview
+                    {/* Icon: Muncul di Mobile, Hilang di Desktop */}
+                    <svg
+                      xmlns="http://w3.org"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-4 h-4 !block md:!hidden"
+                    >
+                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+
+                    {/* Text: Hilang di Mobile, Muncul di Desktop */}
+                    <span className="!hidden md:!inline">Preview</span>
                   </button>
+
                   <button
                     onClick={() => setComponentCodeTab(prev => ({ ...prev, buttons: 'code' }))}
-                    className={`px-2.5 py-1 text-xs font-semibold rounded cursor-pointer ${componentCodeTab.buttons === 'code' ? 'bg-text-main text-canvas' : 'text-text-sub'}`}
+                    title="HTML Code"
+                    className={`px-2 md:px-2.5 py-1 text-xs font-semibold rounded-full cursor-pointer flex items-center justify-center ${componentCodeTab.buttons === 'code' ? 'bg-text-main text-canvas' : 'text-text-sub'
+                      }`}
                   >
-                    HTML Code
+                    {/* Icon: Muncul di Mobile, Hilang di Desktop */}
+                    <svg
+                      xmlns="http://w3.org"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-4 h-4 !block md:!hidden"
+                    >
+                      <polyline points="16 18 22 12 16 6" />
+                      <polyline points="8 6 2 12 8 18" />
+                    </svg>
+
+                    {/* Text: Hilang di Mobile, Muncul di Desktop */}
+                    <span className="!hidden md:!inline">HTML Code</span>
                   </button>
                 </div>
+
               </div>
 
               {componentCodeTab.buttons === 'preview' ? (
@@ -650,15 +685,52 @@ function App() {
                 <div className="flex items-center gap-1 bg-input p-1 rounded-lg border border-border">
                   <button
                     onClick={() => setComponentCodeTab(prev => ({ ...prev, mentions: 'preview' }))}
-                    className={`px-2.5 py-1 text-xs font-semibold rounded cursor-pointer ${componentCodeTab.mentions === 'preview' ? 'bg-text-main text-canvas' : 'text-text-sub'}`}
+                    title="Preview"
+                    className={`px-2 md:px-2.5 py-1 text-xs font-semibold rounded-full cursor-pointer flex items-center justify-center ${componentCodeTab.mentions === 'preview' ? 'bg-text-main text-canvas' : 'text-text-sub'
+                      }`}
                   >
-                    Preview
+                    {/* Icon: Muncul di Mobile, Hilang di Desktop */}
+                    <svg
+                      xmlns="http://w3.org"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-4 h-4 !block md:!hidden"
+                    >
+                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+
+                    {/* Text: Hilang di Mobile, Muncul di Desktop */}
+                    <span className="!hidden md:!inline">Preview</span>
                   </button>
+
                   <button
                     onClick={() => setComponentCodeTab(prev => ({ ...prev, mentions: 'code' }))}
-                    className={`px-2.5 py-1 text-xs font-semibold rounded cursor-pointer ${componentCodeTab.mentions === 'code' ? 'bg-text-main text-canvas' : 'text-text-sub'}`}
+                    title="HTML Code"
+                    className={`px-2 md:px-2.5 py-1 text-xs font-semibold rounded-full cursor-pointer flex items-center justify-center ${componentCodeTab.mentions === 'code' ? 'bg-text-main text-canvas' : 'text-text-sub'
+                      }`}
                   >
-                    HTML Code
+                    {/* Icon: Muncul di Mobile, Hilang di Desktop */}
+                    <svg
+                      xmlns="http://w3.org"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-4 h-4 !block md:!hidden"
+                    >
+                      <polyline points="16 18 22 12 16 6" />
+                      <polyline points="8 6 2 12 8 18" />
+                    </svg>
+
+                    {/* Text: Hilang di Mobile, Muncul di Desktop */}
+                    <span className="!hidden md:!inline">HTML Code</span>
                   </button>
                 </div>
               </div>
@@ -687,15 +759,6 @@ function App() {
                       </div>
                     </div>
                     <div className="mention-item">
-                      <div className="mention-avatar flex items-center justify-center text-white font-bold text-xs" style={{ background: 'var(--accent)' }}>
-                        U
-                      </div>
-                      <div className="mention-info">
-                        <span className="mention-name">Uwebly Official</span>
-                        <span className="mention-usertag">@uwebly</span>
-                      </div>
-                    </div>
-                    <div className="mention-item">
                       <img src="https://github.com/velora-assistant.png" alt="UFauzan" className="mention-avatar" />
                       <div className="mention-info">
                         <div className="flex items-center gap-1">
@@ -703,6 +766,25 @@ function App() {
                           <VerifiedBadgeIcon className="w-3.5 h-3.5 text-accent" />
                         </div>
                         <span className="mention-usertag">@velora-assistant</span>
+                      </div>
+                    </div>
+                    <div className="mention-item">
+                      <img src="https://github.com/ahzanmc.png" alt="UFauzan" className="mention-avatar" />
+                      <div className="mention-info">
+                        <div className="flex items-center gap-1">
+                          <span className="mention-name">AhZanMC</span>
+                          <VerifiedBadgeIcon className="w-3.5 h-3.5 text-blue-500" />
+                        </div>
+                        <span className="mention-usertag">@ahzanmc</span>
+                      </div>
+                    </div>
+                    <div className="mention-item">
+                      <img src="https://ahzanmc.com/assets/zansocial/favicon.svg" alt="UFauzan" className="mention-avatar" />
+                      <div className="mention-info">
+                        <div className="flex items-center gap-1">
+                          <span className="mention-name">Zansocial.</span>
+                        </div>
+                        <span className="mention-usertag">@zansocial</span>
                       </div>
                     </div>
                   </div>
@@ -807,7 +889,7 @@ function App() {
                   Bmdu Standard
                 </span>
                 <img
-                  src="https://github.com/umarfauzan11.png"
+                  src="https://uwebly.com/assets/avatar/profilesmall.webp"
                   alt="Squircle"
                   className="w-24 h-24 mb-4 object-cover border border-border"
                   style={{ borderRadius: '40%' }}
@@ -822,7 +904,7 @@ function App() {
               {/* Card 2: Old Circle 50% */}
               <div className="border border-border bg-card rounded-2xl p-6 flex flex-col items-center text-center opacity-70">
                 <img
-                  src="https://github.com/umarfauzan11.png"
+                  src="https://uwebly.com/assets/avatar/profilesmall.webp"
                   alt="Circle"
                   className="w-24 h-24 mb-4 object-cover border border-border"
                   style={{ borderRadius: '50%' }}
@@ -837,7 +919,7 @@ function App() {
               {/* Card 3: Rigid Square 8px */}
               <div className="border border-border bg-card rounded-2xl p-6 flex flex-col items-center text-center opacity-70">
                 <img
-                  src="https://github.com/umarfauzan11.png"
+                  src="https://uwebly.com/assets/avatar/profilesmall.webp"
                   alt="Rigid"
                   className="w-24 h-24 mb-4 object-cover border border-border"
                   style={{ borderRadius: '8px' }}
@@ -863,7 +945,7 @@ function App() {
                   style={{ borderRadius: `${squircleRadius}%` }}
                 >
                   <img
-                    src="https://github.com/umarfauzan11.png"
+                    src="https://uwebly.com/assets/avatar/profilesmall.webp"
                     alt="Tester"
                     className="w-full h-full object-cover"
                     style={{ borderRadius: `${squircleRadius}%` }}
@@ -886,14 +968,14 @@ function App() {
                   />
 
                   <div className="flex items-center justify-between text-[11px] text-text-mute">
-                    <span>0% (Square)</span>
+                    <span>0%</span>
                     <button
                       onClick={() => setSquircleRadius(40)}
-                      className="px-2 py-1 rounded bg-accent/10 text-accent font-semibold hover:bg-accent/20 cursor-pointer"
+                      className="px-2 py-1 rounded-full bg-border text-text font-semibold hover:bg-border/20 cursor-pointer"
                     >
                       Reset
                     </button>
-                    <span>50% (Circle)</span>
+                    <span>50%</span>
                   </div>
                 </div>
               </div>
