@@ -47,14 +47,15 @@
 
 /* Active keyboard selection */
 .mention-item.active {
-  border: 1px solid var(--accent);
+  background: var(--hover-bg);
+  border: 1px solid var(--border);
 }
 
 /* Avatar */
 .mention-avatar {
   width: 42px;
   height: 42px;
-  border-radius: 40%;
+  border-radius: var(--radius-avatar, 40%);
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -78,7 +79,7 @@
 
 /* User tag */
 .mention-usertag {
-  color: #9ca3af;
+  color: var(--text-muted);
   font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
@@ -89,10 +90,10 @@
 @keyframes mentionFade {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }

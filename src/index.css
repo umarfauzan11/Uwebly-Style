@@ -1,22 +1,38 @@
-/* Google Fonts & Iconsets */
+/* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-@import "bootstrap-icons/font/bootstrap-icons.css";
 @import "tailwindcss";
+
+/* Tailwind v4 Theme Bindings to Design Tokens */
+@theme {
+  --color-canvas: var(--bg-color);
+  --color-canvas-sub: var(--bg-secondary);
+  --color-card: var(--card-bg);
+  --color-input: var(--input-bg);
+  --color-hover: var(--hover-bg);
+  --color-text-main: var(--text-color);
+  --color-text-sub: var(--text-secondary);
+  --color-text-mute: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+  --radius-avatar: var(--radius-avatar);
+}
 
 /* Design Tokens */
 @import "./tokens/tokens.css";
 
-/* Base & Reset */
-@import "./base/base.css";
+/* Base & Reset in Base Layer */
+@import "./base/base.css" layer(base);
 
-/* Components & Layout */
-@import "./components/layout.css";
-@import "./components/navigation.css";
-@import "./components/sidebar.css";
-@import "./components/mention.css";
-@import "./components/report-modal.css";
-@import "./components/skeleton.css";
-@import "./components/message-drawer.css";
-@import "./components/camera-modal.css";
-@import "./components/avatar-animations.css";
-@import "./components/utilities.css";
+/* Components & Layout in Components Layer */
+@import "./components/layout.css" layer(components);
+@import "./components/navigation.css" layer(components);
+@import "./components/sidebar.css" layer(components);
+@import "./components/mention.css" layer(components);
+@import "./components/report-modal.css" layer(components);
+@import "./components/skeleton.css" layer(components);
+@import "./components/message-drawer.css" layer(components);
+@import "./components/camera-modal.css" layer(components);
+@import "./components/avatar-animations.css" layer(components);
+@import "./components/utilities.css" layer(components);

@@ -17,11 +17,11 @@
 .camera-modal {
   background: var(--bg-color);
   border-radius: var(--radius-xl, 24px);
+  border: 1px solid var(--border);
   width: 100%;
   max-width: 500px;
   max-height: 95vh;
   overflow: hidden;
-  box-shadow: var(--shadow-modal);
   animation: scaleIn 0.3s ease;
   display: flex;
   flex-direction: column;

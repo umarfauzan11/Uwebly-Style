@@ -3,7 +3,7 @@
    ============================================ */
 
 .fade-in {
-  margin-left: 14rem !important;
+  animation: fadeIn 0.25s ease;
 }
 
 @media (max-width: 768px) {
@@ -12,8 +12,7 @@
   }
 
   .fade-in {
-    margin-left: 0 !important;
-    padding: 1px;
+    animation: fadeIn 0.25s ease;
   }
 
   .hidden {
@@ -110,18 +109,13 @@
   position: absolute;
   width: 1rem;
   right: 6%;
-  top: 10%;
-  transform: translateY(-50%);
+  top: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .suggestion-close-btn:hover {
-  opacity: 0.4;
-  font-size: 1.2rem;
-  position: absolute;
-  width: 1rem;
-  right: 6%;
-  top: 10%;
-  transform: translateY(-50%);
+  opacity: 0.6;
 }
 
 .cta-title {

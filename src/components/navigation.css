@@ -47,7 +47,7 @@
 .nav-link:hover,
 .nav-link.active {
   opacity: 1;
-  background-color: #9999996b;
+  background-color: var(--hover-bg);
 }
 
 .nav-link-ai {
@@ -65,7 +65,7 @@
 .nav-link-ai:hover,
 .nav-link-ai.active {
   opacity: 1;
-  background-color: #9999996b;
+  background-color: var(--hover-bg);
 }
 
 .nav-text {
@@ -75,7 +75,9 @@
 .nav-avatar {
   display: flex;
   width: 1.6rem;
-  border-radius: 8px;
+  height: 1.6rem;
+  border-radius: var(--radius-avatar, 40%);
+  object-fit: cover;
 }
 
 .nav-avatar-special {
@@ -84,7 +86,7 @@
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  border-radius: var(--radius-avatar, 40%);
 }
 
 .nav-posd-icon {
@@ -179,10 +181,10 @@
 }
 
 .render-navbar-home {
-  margin-left: 13.75rem;
+  margin-left: 0;
   position: fixed;
   top: 0;
-  left: 220px;
+  left: var(--desktop-nav-width, 220px);
   right: 0;
   height: 60px;
   background: var(--bg-color);
@@ -277,9 +279,9 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: var(--border);
-  color: white;
-  border: none;
+  background: var(--text-color);
+  color: var(--bg-color);
+  border: 1px solid var(--text-color);
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;

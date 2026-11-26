@@ -83,8 +83,8 @@ main {
 }
 
 .terms-center {
-  margin-left: 14rem !important;
-  margin-top: 4rem;
+  margin: 4rem auto 0;
+  max-width: 800px;
 }
 
 .tag-header-section {

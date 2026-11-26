@@ -1,263 +1,153 @@
 # Uwebly Style Guide
 
-Official design system and style guide for Uwebly platform.
+Official design tokens, stylesheets, and UI architecture for the Uwebly ecosystem by Bmdu Studio.
 
 ---
 
 ## Overview
 
-Uwebly Style adalah panduan desain resmi dan komprehensif untuk memastikan konsistensi visual di seluruh platform Uwebly. Repository ini berisi komponen UI, design tokens, dan guidelines untuk membangun interface yang kohesif dan user-friendly.
-
-Tujuan utama:
-
-- Memastikan konsistensi visual di semua produk Uwebly
-- Menyediakan komponen reusable dan well-documented
-- Mempercepat proses development melalui component library
-- Menjaga standar kualitas design yang tinggi
-- Memudahkan kolaborasi antara designer dan developer
+**Uwebly Style** adalah fondasi sistem desain resmi untuk seluruh produk web Bmdu Studio (termasuk [uwebly.com](https://uwebly.com), [umessage.uwebly.com](https://umessage.uwebly.com), dan [velora.uwebly.com](https://velora.uwebly.com)). Repository ini mengelola token desain global, komponen CSS murni yang modular, dan mendistribusikan stylesheet produksi yang teroptimasi via CDN.
 
 ---
 
-## Tech Stack
+## Quick Start (CDN Usage)
 
-### UI Framework & Tooling
+Untuk mengintegrasikan Uwebly Style ke aplikasi web atau landing page eksternal, sertakan stylesheet resmi langsung di dalam tag `<head>`:
 
-- **React 19** - Component library foundation
-- **Vite 6** - Fast build tool and development server
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **Storybook** - Interactive component documentation
-- **ESLint** - Code quality and consistency
-
-### Design Tokens
-
-- Color palette dan typography definitions
-- Spacing dan sizing scales
-- Component variants dan states
-- Dark/light theme support
-
----
-
-## Style Components
-
-Komponen UI yang tersedia dalam design system:
-
-| Category | Component Types |
-|---|---|
-| Form | Input, Button, Checkbox, Radio, Select, Textarea |
-| Navigation | Navigation, Sidebar, Breadcrumb, Tabs |
-| Feedback | Modal, Alert, Toast, Spinner, Progress |
-| Content | Card, Badge, Avatar, Icon, Typography |
-| Layout | Grid, Flexbox, Container, Spacing utilities |
-| Theme | Color tokens, Typography scale, Dark/Light modes |
-
----
-
-## Design Principles
-
-- **Consistency** - Unified visual language across all products
-- **Accessibility** - WCAG compliant components
-- **Simplicity** - Clean and intuitive interfaces
-- **Scalability** - Component system yang dapat tumbuh
-- **Performance** - Optimized assets dan lean CSS
-
----
-
-## Project Structure
-
-```bash
-uwebly-style/
-├── src/
-│   ├── components/          # Reusable UI components
-│   ├── styles/              # Global styles & design tokens
-│   ├── stories/             # Storybook stories
-│   ├── assets/              # Icons, images, fonts
-│   ├── index.css            # Global CSS
-│   └── main.jsx             # Entry point
-├── public/                  # Static assets
-├── storybook/               # Storybook configuration
-├── vite.config.js           # Vite configuration
-├── eslint.config.js         # ESLint rules
-├── package.json             # Dependencies
-└── README.md                # This file
+```html
+<!-- Uwebly Style CDN -->
+<link rel="stylesheet" href="https://style.uwebly.com/uwebly3.min.css" />
 ```
 
 ---
 
-## Getting Started
+## Design Principles (Bmdu Studio Standard)
 
-### Installation
+1. **Flat & Clean (Zero Shadow)**: Seluruh kedalaman visual dan pemisah konten menggunakan `1px solid var(--border)`. Tidak menggunakan `box-shadow` pada kartu, modal, maupun drawer.
+2. **Standard Avatar Squircle (40%)**: Avatar profil wajib menggunakan `border-radius: 40%` (`var(--radius-avatar)`), bukan lingkaran penuh (50%) atau radius sembarang.
+3. **Strict Border Coloring**: Garis batas elemen selalu mengacu pada `var(--border)`, tidak pernah menggunakan `var(--accent)`.
+4. **WCAG Accessibility & Contrast**: Palet warna Light dan Dark dirancang presisi untuk memastikan rasio kontras teks selalu terbaca dengan jelas.
+5. **Ultra-Lightweight & Decoupled**: Bebas dari dependensi font binary eksternal, menghasilkan file CSS yang sangat ramping (~16 kB gzipped ~4 kB).
+
+---
+
+## Design Tokens (CSS Variables)
+
+### Color Palette
+
+| Token | Light Mode | Dark Mode | Deskripsi |
+|---|---|---|---|
+| `--bg-color` | `#ffffff` | `#121212` | Background utama aplikasi |
+| `--bg-secondary` | `#f4f4f5` | `#1e1e1e` | Background area sekunder |
+| `--card-bg` | `#ffffff` | `#121212` | Background kartu dan kontainer |
+| `--text-color` | `#111111` | `#ffffff` | Teks judul dan konten utama |
+| `--text-secondary`| `#71717a` | `#a1a1aa` | Teks sekunder, deskripsi, sublabel |
+| `--text-muted` | `#a1a1aa` | `#71717a` | Teks penjelas dan timestamp |
+| `--accent` | `#ff42f2` | `#ff42f2` | Aksen warna khas Uwebly |
+| `--border` | `#e0e0e0` | `#333333` | Garis batas komponen & kartu |
+| `--hover-bg` | `#f0f0f0` | `#2a2a2a` | State hover elemen interaktif |
+| `--danger` | `#ff4757` | `#ff4757` | Aksi destruktif, badge notifikasi |
+| `--danger-hover` | `#ff2222` | `#ff2222` | Hover aksi destruktif |
+
+### Radius Tokens
+
+```css
+--radius-xs: 4px;
+--radius-sm: 8px;
+--radius-md: 12px;
+--radius-lg: 16px;
+--radius-xl: 24px;
+--radius-avatar: 40%; /* Standar squircle Bmdu */
+--radius-full: 9999px;
+```
+
+### Layout & Z-Index Tokens
+
+```css
+--desktop-nav-width: 220px;
+--z-base: 1;
+--z-nav: 1000;
+--z-dropdown: 1050;
+--z-modal: 1100;
+--z-toast: 1200;
+```
+
+---
+
+## Dark Mode Implementation
+
+Tema dikontrol melalui atribut `data-theme` pada tag `<html>` atau `<body>`:
+
+```html
+<!-- Light Theme (Default) -->
+<html data-theme="light">
+
+<!-- Dark Theme -->
+<html data-theme="dark">
+```
+
+Mengubah tema via JavaScript:
+
+```javascript
+document.documentElement.setAttribute('data-theme', 'dark');
+```
+
+---
+
+## Modular Component Structure
+
+```bash
+src/
+├── base/
+│   └── base.css             # CSS reset, typography, seleksi teks
+├── tokens/
+│   └── tokens.css           # Variabel token warna, radius, dan z-index
+├── components/
+│   ├── avatar-animations.css# Animasi flip dan modal share avatar
+│   ├── camera-modal.css     # Komponen UI modal kamera
+│   ├── layout.css           # Container dua kolom & grid layout
+│   ├── mention.css          # Dropdown mention (@user)
+│   ├── message-drawer.css   # Laci pesan slide-in
+│   ├── navigation.css       # Top navbar dan navigasi sidebar
+│   ├── report-modal.css     # Modal laporkan konten/pengguna
+│   ├── sidebar.css          # Kartu sidebar, hashtag trends, following
+│   ├── skeleton.css         # Shimmer placeholder loading
+│   └── utilities.css        # Utility fade-in, responsive notfound
+├── index.css                # Titik masuk penggabungan seluruh stylesheet
+└── main.jsx                 # Showcase interactive visual playground
+```
+
+---
+
+## Development & Build
+
+### Requirements
+
+- Node.js >= 20
+- npm >= 10
+
+### Menjalankan Playground Showcase
 
 ```bash
 npm install
-```
-
-### Development
-
-```bash
 npm run dev
 ```
 
-### Storybook
+Buka `http://localhost:5173` untuk melihat showcase interaktif seluruh komponen dan token warna.
 
-```bash
-npm run storybook
-```
-
-### Build
-
-```bash
-npm run build
-```
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
-│   ├── context/
-│   ├── hooks/
-│   ├── utils/
-│   └── App.jsx
-│
-├── netlify/
-│   └── functions/
-│
-├── scripts/
-└── package.json
-````
-
----
-
-# Development
-
-## Requirements
-
-* Node.js 24.12.0
-* npm 11.6.2
-
----
-
-## Installation
-
-```bash
-git clone https://github.com/your-username/uweb-react.git
-
-cd uweb-react
-
-npm install
-```
-
----
-
-## Environment Variables
-
-Create a `.env` file in the project root:
-
-```env
-VITE_FIREBASE_API_KEY=
-VITE_FIREBASE_AUTH_DOMAIN=
-VITE_FIREBASE_PROJECT_ID=
-VITE_FIREBASE_STORAGE_BUCKET=
-VITE_FIREBASE_MESSAGING_SENDER_ID=
-VITE_FIREBASE_APP_ID=
-VITE_FIREBASE_DATABASE_URL=
-```
-
----
-
-## Run Development Server
-
-```bash
-npm run dev
-```
-
-Default local server:
-
-```bash
-http://localhost:5173
-```
-
----
-
-# Build & Deployment
-
-## Production Build
+### Membangun Stylesheet Produksi
 
 ```bash
 npm run build
 ```
 
-Build output:
-
-```bash
-dist/
-```
+Perintah build akan:
+1. Memproses dan meminifikasi CSS ke `dist/uwebly.min.css`.
+2. Menyelaraskan secara otomatis ke `dist/uwebly3.min.css` dan `dist/uwebly2.min.css` untuk kompatibilitas CDN.
 
 ---
 
-## Deployment Stack
+## License & Credits
 
-| Service           | Purpose                |
-| ----------------- | ---------------------- |
-| Netlify           | Frontend hosting       |
-| Netlify Functions | Serverless APIs        |
-| Firebase          | Backend infrastructure |
-
----
-
-# Performance Considerations
-
-* Vite-based fast development builds
-* Lazy-loaded routes and assets
-* Infinite scrolling for feed optimization
-* Firebase realtime synchronization
-* PWA caching support
-* Responsive media rendering
-
----
-
-# Security
-
-* Firebase Authentication-based access control
-* Environment variable isolation
-* Protected user data access
-* Cloud Storage-based media handling
-
----
-
-# Progressive Web App
-
-Uwebly supports Progressive Web App functionality:
-
-* Installable on desktop and mobile
-* Offline asset caching
-* Native-like navigation experience
-
----
-
-# Future Improvements
-
-Planned engineering improvements include:
-
-* Unit and integration testing
-* CI/CD pipeline automation
-* Media compression pipeline
-* Feed ranking optimization
-* WebSocket abstraction layer
-* Monitoring and analytics integration
-
----
-
-# Author
-
-## Umar Fauzan Irvan
-
-Founder & Fullstack Developer
-
-* Website: [https://uwebly.com](https://uwebly.com)
-* GitHub: [https://github.com/umarfauzan11](https://github.com/umarfauzan11)
-
----
-
-# License
-
-© 2026 Bmdu Studio.
-All rights reserved.
+© 2026 **Bmdu Studio**. All rights reserved.  
+Created and maintained by [Umar Fauzan Irvan](https://github.com/umarfauzan11).

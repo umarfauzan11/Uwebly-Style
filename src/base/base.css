@@ -1,7 +1,5 @@
 /* Global Reset & Base */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
@@ -29,13 +27,12 @@ button {
 
 .explore-content {
   padding: 1rem;
-  margin-left: 14rem;
-  margin-top: 5rem;
+  width: 100%;
 }
 
 ::selection {
-  background: #a4299c;
-  color: #000;
+  background: var(--accent);
+  color: #ffffff;
 }
 
 body,

@@ -3,7 +3,7 @@
    ============================================ */
 
 .sidebar-card {
-  background: var(--card-bg);
+  background: var(--bg-color);
   border: 1px solid var(--border);
   border-radius: 15px;
   padding: 1rem;
@@ -60,7 +60,7 @@
 .sidebar-user-avatar {
   width: 44px;
   height: 44px;
-  border-radius: 17px;
+  border-radius: var(--radius-avatar, 40%);
   object-fit: cover;
 }
 
@@ -83,7 +83,7 @@
 .sidebar-user-handle {
   display: block;
   font-size: 0.8rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .sidebar-follow-btn {
@@ -124,7 +124,7 @@
 .sidebar-ad-content p {
   margin: 0 0 1rem 0;
   font-size: 0.85rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .sidebar-ad-btn {
@@ -157,25 +157,25 @@
 
 .sidebar-footer-links a {
   font-size: 0.8rem;
-  color: #666;
+  color: var(--text-secondary);
   text-decoration: none;
 }
 
 .sidebar-footer-links a:hover {
   text-decoration: underline;
   font-size: 0.8rem;
-  color: #666;
+  color: var(--text-color);
 }
 
 .sidebar-copyright {
   font-size: 0.75rem;
-  color: #999;
+  color: var(--text-muted);
   margin: 0;
 }
 
 .sidebar-copyright a {
   font-size: 0.75rem;
-  color: #999;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -231,6 +231,7 @@
 
 .hashtag-arrow {
   color: var(--secondary-color);
+  width: 23px;
   opacity: 0.5;
   font-size: 0.9rem;
 }
