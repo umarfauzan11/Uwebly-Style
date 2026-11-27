@@ -62,11 +62,10 @@ export function Hero({ copyToClipboard }) {
                   <button
                     key={key}
                     onClick={() => setInstallTab(key)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap cursor-pointer transition-colors ${
-                      installTab === key
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap cursor-pointer transition-colors ${installTab === key
                         ? 'bg-text-main text-canvas'
                         : 'text-text-sub hover:text-text-main hover:bg-hover'
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </button>
@@ -75,11 +74,13 @@ export function Hero({ copyToClipboard }) {
 
               {/* Code Display & Action Button (Copy / See Docs) */}
               <div className="p-3.5 sm:p-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-canvas">
-                <div className="overflow-x-auto scrollbar-none font-mono text-xs text-text-main py-1">
-                  <pre className="whitespace-pre overflow-x-auto scrollbar-none selection:bg-accent/30">
-                    {activeSnippet.code}
-                  </pre>
-                </div>
+                {installTab !== 'ai' && (
+                  <div className="overflow-x-auto scrollbar-none font-mono text-xs text-text-main py-1">
+                    <pre className="whitespace-pre overflow-x-auto scrollbar-none selection:bg-accent/30">
+                      {activeSnippet.code}
+                    </pre>
+                  </div>
+                )}
 
                 {installTab === 'ai' ? (
                   <a
