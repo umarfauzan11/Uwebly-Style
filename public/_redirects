@@ -1,0 +1,7 @@
+# BMDU Rules Subdomain Aliasing
+# When requested directly on bmdu-rules.uwebly.com, map root and paths to /rules/...
+https://bmdu-rules.uwebly.com/            /rules/index.html   200!
+https://bmdu-rules.uwebly.com/:splat      /rules/:splat       200!
+
+# Default SPA Fallback for Uwebly-Style main website
+/*                                        /index.html         200

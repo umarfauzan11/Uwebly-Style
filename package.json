@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "sync:rules": "node scripts/sync-rules.mjs",
+    "prebuild": "node scripts/sync-rules.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
