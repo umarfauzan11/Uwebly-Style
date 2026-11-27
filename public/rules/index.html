@@ -1,272 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMDU Studio Legal & Rules CDN</title>
-  <meta name="description" content="Centralized Terms of Service, Privacy Policies, and Community Guidelines for the BMDU & Uwebly Ecosystem.">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <style>
-    :root {
-      --bg: #09090b;
-      --card-bg: #111113;
-      --card-hover: #18181b;
-      --text: #f4f4f5;
-      --text-muted: #a1a1aa;
-      --border: #27272a;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-      --accent: #ff42f2;
-      --code-bg: #0d0d10;
-      --radius: 8px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bmdu Studio Legal & Rules CDN</title>
+    <meta
+      name="description"
+      content="Centralized Terms of Service, Privacy Policies, and Community Guidelines for the Bmdu & Uwebly Ecosystem."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <p class="subtitle">
+          Single Source of Truth untuk dokumen Terms of Service, Kebijakan
+          Privasi, dan Regulasi Ekosistem Bmdu.
+        </p>
+      </header>
 
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #ffffff;
-        --card-bg: #fbfbfb;
-        --card-hover: #f4f4f5;
-        --text: #18181b;
-        --text-muted: #71717a;
-        --border: #e4e4e7;
-        --primary: #2563eb;
-        --primary-hover: #1d4ed8;
-        --accent: #d924cb;
-        --code-bg: #f4f4f5;
-      }
-    }
+      <div class="grid">
+        <!-- Uwebly Terms -->
+        <div class="card">
+          <h2 class="card-title">
+            Syarat &amp; Ketentuan Penggunaan Platform Uwebly
+          </h2>
+          <div class="card-meta">
+            File: <code>uwebly.md</code> • Versi: 6.4 • Regulasi Ekosistem
+          </div>
+          <p class="card-desc">
+            Aturan menyeluruh mencakup kepatuhan akun, Posd, UMessage, Uwebly
+            Ads, verifikasi badge, Deezer music, dan standar komunitas.
+          </p>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="/uwebly.md"
+              target="_blank"
+              rel="noopener"
+              >Buka Raw Markdown</a
+            >
+            <a
+              class="btn"
+              href="https://help.uwebly.com/terms/uwebly-terms"
+              target="_blank"
+              rel="noopener"
+              >Baca di Help Center ↗</a
+            >
+          </div>
+        </div>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        <!-- UMessage Terms -->
+        <div class="card">
+          <h2 class="card-title">
+            Ketentuan Layanan &amp; Kebijakan Privasi UMessage
+          </h2>
+          <div class="card-meta">
+            File: <code>umessage.md</code> • Versi: 1.2.2 • E2EE &amp; Data
+            Security
+          </div>
+          <p class="card-desc">
+            Kebijakan khusus komunikasi instan terenkripsi (TweetNaCl), brankas
+            kunci (Key Vault), panggilan suara WebRTC, dan tata kelola privasi
+            data.
+          </p>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="/umessage.md"
+              target="_blank"
+              rel="noopener"
+              >Buka Raw Markdown</a
+            >
+            <a
+              class="btn"
+              href="https://help.uwebly.com/terms/umessage-terms"
+              target="_blank"
+              rel="noopener"
+              >Baca di Help Center ↗</a
+            >
+          </div>
+        </div>
 
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      padding: 2.5rem 1.25rem;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-    }
+        <!-- Velora AI Terms & Privacy -->
+        <div class="card">
+          <h2 class="card-title">
+            Syarat Layanan &amp; Kebijakan Privasi Velora AI
+          </h2>
+          <div class="card-meta">
+            File: <code>velora.md</code> (atau <code>velora-terms.md</code> &amp; <code>velora-privacy.md</code>) • Versi: 1.2.0 • AI Governance
+          </div>
+          <p class="card-desc">
+            Regulasi model AI (Groq LPU &amp; Microsoft Neural), etika prompt, disclaimer halusinasi probabilistik, proteksi data tanpa pelatihan publik, dan mode Guest/Member.
+          </p>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="/velora.md"
+              target="_blank"
+              rel="noopener"
+              >Buka Raw Markdown</a
+            >
+            <a
+              class="btn"
+              href="/velora-terms.md"
+              target="_blank"
+              rel="noopener"
+              >Terms Saja</a
+            >
+            <a
+              class="btn"
+              href="/velora-privacy.md"
+              target="_blank"
+              rel="noopener"
+              >Privacy Saja</a
+            >
+          </div>
+        </div>
 
-    .container {
-      width: 100%;
-      max-width: 760px;
-    }
-
-    header {
-      margin-bottom: 2.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1.5rem;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.65rem;
-      border-radius: 9999px;
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    h1 {
-      font-size: 1.85rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-
-    .subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    .grid {
-      display: grid;
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: background 0.15s ease, border-color 0.15s ease;
-      box-shadow: none !important;
-    }
-
-    .card:hover {
-      background: var(--card-hover);
-      border-color: var(--text-muted);
-    }
-
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-      color: var(--text);
-    }
-
-    .card-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.85rem;
-    }
-
-    .card-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.5rem 0.85rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-      transition: all 0.15s ease;
-      box-shadow: none !important;
-    }
-
-    .btn:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .btn-primary {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #ffffff;
-    }
-
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    pre {
-      background: var(--code-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.82rem;
-      color: var(--text);
-      overflow-x: auto;
-      margin-bottom: 2rem;
-    }
-
-    footer {
-      width: 100%;
-      max-width: 760px;
-      margin-top: 3rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1.5rem;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-      text-align: center;
-    }
-
-    footer a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="badge">BMDU Ecosystem CDN</div>
-      <h1>BMDU Studio Legal &amp; Rules CDN</h1>
-      <p class="subtitle">Single Source of Truth untuk dokumen Terms of Service, Kebijakan Privasi, dan Regulasi Ekosistem BMDU.</p>
-    </header>
-
-    <div class="grid">
-      <!-- Uwebly Terms -->
-      <div class="card">
-        <h2 class="card-title">Syarat &amp; Ketentuan Penggunaan Platform Uwebly</h2>
-        <div class="card-meta">File: <code>uwebly.md</code> • Versi: 6.4 • Regulasi Ekosistem</div>
-        <p class="card-desc">Aturan menyeluruh mencakup kepatuhan akun, Posd, UMessage, Uwebly Ads, verifikasi badge, Deezer music, dan standar komunitas.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="/uwebly.md" target="_blank" rel="noopener">Buka Raw Markdown</a>
-          <a class="btn" href="https://help.uwebly.com/terms/uwebly-terms" target="_blank" rel="noopener">Baca di Help Center ↗</a>
+        <!-- Velora Help & FAQ -->
+        <div class="card">
+          <h2 class="card-title">
+            Pusat Bantuan &amp; Panduan Fitur Velora
+          </h2>
+          <div class="card-meta">
+            File: <code>velora-help.md</code> • Feature Manual &amp; FAQ
+          </div>
+          <p class="card-desc">
+            Panduan lengkap arena Velora Talk multi-karakter, sutradara adegan prompt, Google Calendar sync, kanvas Pocket Keuangan, dan penyelesaian error 429.
+          </p>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="/velora-help.md"
+              target="_blank"
+              rel="noopener"
+              >Buka Raw Markdown</a
+            >
+            <a
+              class="btn"
+              href="https://velora.uwebly.com/help"
+              target="_blank"
+              rel="noopener"
+              >Buka di Velora ↗</a
+            >
+          </div>
         </div>
       </div>
 
-      <!-- UMessage Terms -->
-      <div class="card">
-        <h2 class="card-title">Ketentuan Layanan &amp; Kebijakan Privasi UMessage</h2>
-        <div class="card-meta">File: <code>umessage.md</code> • Versi: 1.2.2 • E2EE &amp; Data Security</div>
-        <p class="card-desc">Kebijakan khusus komunikasi instan terenkripsi (TweetNaCl), brankas kunci (Key Vault), panggilan suara WebRTC, dan tata kelola privasi data.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="/umessage.md" target="_blank" rel="noopener">Buka Raw Markdown</a>
-          <a class="btn" href="https://help.uwebly.com/terms/umessage-terms" target="_blank" rel="noopener">Baca di Help Center ↗</a>
-        </div>
-      </div>
-    </div>
-
-    <h3 class="section-title">Contoh Pemanggilan CDN (Cross-Origin Ready)</h3>
-    <p class="subtitle" style="margin-bottom: 0.75rem;">Header <code>Access-Control-Allow-Origin: *</code> telah diaktifkan, siap di-fetch langsung oleh frontend web apapun di ekosistem:</p>
-    <pre><code>// Mengambil dokumen legal langsung dari frontend
+      <h3 class="section-title">Contoh Pemanggilan CDN (Cross-Origin Ready)</h3>
+      <p class="subtitle" style="margin-bottom: 0.75rem">
+        Header <code>Access-Control-Allow-Origin: *</code> telah diaktifkan,
+        siap di-fetch langsung oleh frontend web apapun di ekosistem:
+      </p>
+      <pre><code>// Mengambil dokumen legal langsung dari frontend
 const response = await fetch('https://bmdu-rules.uwebly.com/uwebly.md');
 const markdownContent = await response.text();
 
 // Atau dokumen UMessage:
 // https://bmdu-rules.uwebly.com/umessage.md</code></pre>
-  </div>
-
-  <footer>
-    <p>Dikelola oleh <strong>BMDU Studio</strong> (Binary Mind, Digital Universe).</p>
-    <p>
-      <a href="https://bmdu.uwebly.com" target="_blank" rel="noopener">BMDU Studio</a> • 
-      <a href="https://style.uwebly.com" target="_blank" rel="noopener">Uwebly Style</a> • 
-      <a href="https://uwebly.com" target="_blank" rel="noopener">Uwebly</a> • 
-      <a href="https://help.uwebly.com" target="_blank" rel="noopener">Uwebly Help Center</a>
-    </p>
-  </footer>
-</body>
+    </div>
+  </body>
 </html>

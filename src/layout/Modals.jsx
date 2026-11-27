@@ -17,7 +17,7 @@ export function Modals({ activeModal, setActiveModal, copyToClipboard }) {
 
   return (
     <>
-      {/* Standard BMDU Modal Demo */}
+      {/* Standard Bmdu Modal Demo */}
       {activeModal === 'modalDemo' && (
         <div
           className={`uwebly-modal-overlay active ${isClosing ? 'closing' : ''}`}
@@ -25,7 +25,7 @@ export function Modals({ activeModal, setActiveModal, copyToClipboard }) {
         >
           <div className="uwebly-modal" onClick={e => e.stopPropagation()}>
             <div className="uwebly-modal-header">
-              <h3 className="uwebly-modal-title">Standard BMDU Dialog</h3>
+              <h3 className="uwebly-modal-title">Standard Bmdu Dialog</h3>
               <button className="uwebly-modal-close" onClick={() => handleClose()}>
                 <CloseIcon />
               </button>

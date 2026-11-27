@@ -94,7 +94,7 @@ export function ComponentsSection({
       <div>
         <h2 className="text-xl font-bold text-text-main mb-1">Official UI Components</h2>
         <p className="text-xs text-text-sub">
-          Komponen berstandar BMDU Ecosystem yang didistribusikan langsung di dalam <code>uwebly3.min.css</code> & engine <code>uwebly.min.js</code>.
+          Komponen berstandar Bmdu Ecosystem yang didistribusikan langsung di dalam <code>uwebly3.min.css</code> & engine <code>uwebly.min.js</code>.
         </p>
       </div>
 
@@ -270,7 +270,7 @@ export function ComponentsSection({
               <div className={`uwebly-accordion-item ${openAccordions.includes(0) ? 'open' : ''}`}>
                 <button className="uwebly-accordion-header" onClick={() => toggleAccordionItem(0)}>
                   <span className="uwebly-accordion-title">
-                    Apa filosofi desain utama BMDU Ecosystem?
+                    Apa filosofi desain utama Bmdu Ecosystem?
                   </span>
                   <svg
                     className="uwebly-accordion-chevron"
@@ -286,7 +286,7 @@ export function ComponentsSection({
                 </button>
                 <div className="uwebly-accordion-collapse">
                   <div className="uwebly-accordion-body">
-                    BMDU Ecosystem mengusung filosofi <strong>Flat Zero-Shadow</strong> (tanpa drop-shadow buram), border tegas 1px solid <code>var(--border)</code>, avatar squircle 40%, serta palet warna modular yang teroptimasi untuk performa ultra-ringan.
+                    Bmdu Ecosystem mengusung filosofi <strong>Flat Zero-Shadow</strong> (tanpa drop-shadow buram), border tegas 1px solid <code>var(--border)</code>, avatar squircle 40%, serta palet warna modular yang teroptimasi untuk performa ultra-ringan.
                   </div>
                 </div>
               </div>
@@ -361,14 +361,14 @@ export function ComponentsSection({
   <!-- Item 1 (Terbuka secara default: tambahkan class 'open') -->
   <div class="uwebly-accordion-item open">
     <button class="uwebly-accordion-header" data-uwebly-toggle="accordion">
-      <span class="uwebly-accordion-title">Apa itu BMDU Ecosystem?</span>
+      <span class="uwebly-accordion-title">Apa itu Bmdu Ecosystem?</span>
       <svg class="uwebly-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="6 9 12 15 18 9" />
       </svg>
     </button>
     <div class="uwebly-accordion-collapse">
       <div class="uwebly-accordion-body">
-        BMDU Ecosystem mengusung filosofi flat zero-shadow...
+        Bmdu Ecosystem mengusung filosofi flat zero-shadow...
       </div>
     </div>
   </div>
@@ -400,7 +400,7 @@ export function ComponentsSection({
         <div className="p-4 border-b border-border flex items-center justify-between bg-canvas-sub/30">
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="font-bold text-sm text-text-main">Standard BMDU Modal & Dialogs</h3>
+              <h3 className="font-bold text-sm text-text-main">Standard Bmdu Modal & Dialogs</h3>
             </div>
             <span className="text-xs text-text-sub">Kotak dialog modular dengan backdrop blur, animasi scale-in, dan pilihan ukuran (sm, lg, xl).</span>
           </div>
@@ -457,7 +457,7 @@ export function ComponentsSection({
       </button>
     </div>
     <div class="uwebly-modal-body">
-      <p>Isi dialog konfirmasi standar BMDU...</p>
+      <p>Isi dialog konfirmasi standar Bmdu...</p>
     </div>
     <div class="uwebly-modal-footer">
       <button class="uwebly-modal-btn btn-cancel" data-uwebly-dismiss="modal">Batal</button>

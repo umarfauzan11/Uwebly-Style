@@ -35,7 +35,7 @@ export function Hero({ copyToClipboard }) {
     },
     ai: {
       label: 'AI Docs',
-      desc: 'Panduan lengkap dan aturan arsitektur BMDU untuk AI Assistants (llms.txt).',
+      desc: 'Panduan lengkap dan aturan arsitektur Bmdu untuk AI Assistants (llms.txt).',
     }
   }
 

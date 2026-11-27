@@ -14,8 +14,8 @@ function copyLegacyCssPlugin() {
       const distDir = path.resolve(__dirname, 'dist')
       const mainCss = path.join(distDir, 'uwebly.min.css')
       if (fs.existsSync(mainCss)) {
-        // Sematkan banner lisensi resmi BMDU di baris pertama
-        const banner = '/*! Uwebly Style v3.0.1 | (c) 2026 BMDU Studio | https://style.uwebly.com */\n'
+        // Sematkan banner lisensi resmi Bmdu di baris pertama
+        const banner = '/*! Uwebly Style v3.0.1 | (c) 2026 Bmdu Studio | https://style.uwebly.com */\n'
         const content = fs.readFileSync(mainCss, 'utf8')
         if (!content.startsWith('/*! Uwebly Style')) {
           fs.writeFileSync(mainCss, banner + content)

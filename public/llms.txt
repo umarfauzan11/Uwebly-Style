@@ -4,13 +4,13 @@
 
 ## Philosophy & Core Rules for AI Assistants
 
-When generating HTML, JSX, or CSS for any application within the BMDU Ecosystem, you MUST strictly adhere to these rules:
+When generating HTML, JSX, or CSS for any application within the Bmdu Ecosystem, you MUST strictly adhere to these rules:
 
 1. **Flat Zero-Shadow Architecture**:
    - Strictly NO `box-shadow` or blurry drop-shadows on cards, modals, buttons, or drawers.
    - All visual separation and depth are created solely with `1px solid var(--border)` and contrast between `--bg-color`, `--bg-secondary`, and `--card-bg`.
 
-2. **BMDU Squircle Standard (40%)**:
+2. **Bmdu Squircle Standard (40%)**:
    - Profile avatars and rounded app icons MUST use `border-radius: 40%` (`var(--radius-avatar)`).
    - NEVER use full circles (`border-radius: 50%`) for user profile avatars.
 
@@ -73,7 +73,7 @@ When generating HTML, JSX, or CSS for any application within the BMDU Ecosystem,
 | `--radius-md` | `12px` | Standard cards, accordions, dropdowns |
 | `--radius-lg` | `16px` | Modals, dialogue boxes |
 | `--radius-xl` | `24px` | BottomSheet top corners, drawers |
-| `--radius-avatar` | `40%` | Official BMDU squircle avatar standard |
+| `--radius-avatar` | `40%` | Official Bmdu squircle avatar standard |
 
 ---
 

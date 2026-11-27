@@ -37,7 +37,7 @@ async function fetchRemoteFile(url) {
 }
 
 async function main() {
-  console.log('🔄 [BMDU Rules Sync] Starting sync to public/rules/ ...');
+  console.log('🔄 [Bmdu Rules Sync] Starting sync to public/rules/ ...');
   let hasErrors = false;
 
   for (const { filename, title } of RULES_FILES) {
@@ -84,7 +84,7 @@ async function main() {
   if (hasErrors) {
     console.warn('⚠️ Some rules files could not be synced.');
   } else {
-    console.log('🎉 [BMDU Rules Sync] All rules synced successfully to public/rules/');
+    console.log('🎉 [Bmdu Rules Sync] All rules synced successfully to public/rules/');
   }
 }
 
