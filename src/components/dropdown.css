@@ -1,0 +1,116 @@
+/* ============================================
+   BMDU MULTI-ORIGIN SCALE DROPDOWN COMPONENT
+   Origin-based Scale-in (Top-Left, Top-Right, Bottom-Left, Bottom-Right)
+   Flat Zero-Shadow Architecture
+   ============================================ */
+
+.uwebly-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.uwebly-dropdown-menu {
+  position: absolute;
+  z-index: 1050;
+  min-width: 200px;
+  padding: 6px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.15s ease;
+  pointer-events: none;
+}
+
+/* Open / Show State */
+.uwebly-dropdown-menu.show,
+.uwebly-dropdown-menu.active,
+.uwebly-dropdown.open .uwebly-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) !important;
+  pointer-events: auto;
+}
+
+/* Origin 1: Scale Kiri Atas (Top-Left) -> Opens below, scales from top-left */
+.uwebly-dropdown-menu.origin-top-left {
+  top: calc(100% + 6px);
+  left: 0;
+  transform-origin: top left;
+  transform: scale(0.92);
+}
+
+/* Origin 2: Scale Kanan Atas (Top-Right) -> Opens below, scales from top-right */
+.uwebly-dropdown-menu.origin-top-right {
+  top: calc(100% + 6px);
+  right: 0;
+  transform-origin: top right;
+  transform: scale(0.92);
+}
+
+/* Origin 3: Scale Kiri Bawah (Bottom-Left) -> Opens above, scales from bottom-left */
+.uwebly-dropdown-menu.origin-bottom-left {
+  bottom: calc(100% + 6px);
+  left: 0;
+  transform-origin: bottom left;
+  transform: scale(0.92);
+}
+
+/* Origin 4: Scale Kanan Bawah (Bottom-Right) -> Opens above, scales from bottom-right */
+.uwebly-dropdown-menu.origin-bottom-right {
+  bottom: calc(100% + 6px);
+  right: 0;
+  transform-origin: bottom right;
+  transform: scale(0.92);
+}
+
+/* Menu Header */
+.uwebly-dropdown-header {
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Menu Items */
+.uwebly-dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm, 8px);
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.12s ease;
+}
+
+.uwebly-dropdown-item:hover {
+  background: var(--hover-bg);
+  color: var(--text-color);
+}
+
+/* Danger Item */
+.uwebly-dropdown-item.danger {
+  color: var(--danger, #ff4757);
+}
+
+.uwebly-dropdown-item.danger:hover {
+  background: rgba(255, 71, 87, 0.1);
+  color: var(--danger, #ff4757);
+}
+
+/* Divider */
+.uwebly-dropdown-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}

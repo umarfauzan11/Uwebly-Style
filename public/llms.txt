@@ -1,0 +1,277 @@
+# Uwebly Style
+
+> Official design tokens, stylesheet framework, and UI architecture for Bmdu Studio and the Uwebly ecosystem (uwebly.com, umessage.uwebly.com, velora.uwebly.com).
+
+## Philosophy & Core Rules for AI Assistants
+
+When generating HTML, JSX, or CSS for any application within the BMDU Ecosystem, you MUST strictly adhere to these rules:
+
+1. **Flat Zero-Shadow Architecture**:
+   - Strictly NO `box-shadow` or blurry drop-shadows on cards, modals, buttons, or drawers.
+   - All visual separation and depth are created solely with `1px solid var(--border)` and contrast between `--bg-color`, `--bg-secondary`, and `--card-bg`.
+
+2. **BMDU Squircle Standard (40%)**:
+   - Profile avatars and rounded app icons MUST use `border-radius: 40%` (`var(--radius-avatar)`).
+   - NEVER use full circles (`border-radius: 50%`) for user profile avatars.
+
+3. **Strict Border Palette**:
+   - Border lines must strictly use `var(--border)` (Light: `#e0e0e0`, Dark: `#333333`).
+   - NEVER colorize card or panel container borders with `var(--accent)`.
+
+4. **Dual Theme (Light & Dark)**:
+   - Theme is toggled via `data-theme="light"` or `data-theme="dark"` on `document.documentElement` (`<html data-theme="...">`).
+   - Standard accent color is `#ff42f2` across both themes.
+
+---
+
+## Quickstart & CDN Installation
+
+### Production CDN Tags
+```html
+<!-- Uwebly Style 3.0 CSS -->
+<link
+  rel="stylesheet"
+  href="https://style.uwebly.com/uwebly3.min.css"
+  integrity="sha384-BbkDiRn9IiYi67jlWkpv3YsEWZ0waKl582XgXCqfsEIrw6zT8i9cC//UIMs0xa8/"
+  crossorigin="anonymous"
+/>
+
+<!-- Uwebly Companion JS Engine (Zero-dependency vanilla interactive helper) -->
+<script
+  type="module"
+  src="https://style.uwebly.com/uwebly.min.js"
+  integrity="sha384-wITgPxV4ePOzfIoUFLy7jYeeyRNOqG2CF9iroLYpo8Gt7CsWEqNTK94ZT6QQ6m0G"
+  crossorigin="anonymous"
+></script>
+```
+
+### CSS @import
+```css
+@import url("https://style.uwebly.com/uwebly3.min.css");
+```
+
+---
+
+## CSS Variables (Tokens Matrix)
+
+| Variable | Light | Dark | Purpose |
+|---|---|---|---|
+| `--bg-color` | `#ffffff` | `#121212` | Main page canvas background |
+| `--bg-secondary` | `#f4f4f5` | `#1e1e1e` | Secondary canvas, input bg, section bg |
+| `--card-bg` | `#ffffff` | `#121212` | Background of cards, modals, dropdowns |
+| `--input-bg` | `#f4f4f5` | `#1e1e1e` | Background of form inputs |
+| `--hover-bg` | `#f0f0f0` | `#2a2a2a` | Hover state for buttons and list items |
+| `--text-color` | `#111111` | `#ffffff` | Primary headings and body text |
+| `--text-secondary` | `#71717a` | `#a1a1aa` | Subtitles, labels, descriptions |
+| `--text-muted` | `#a1a1aa` | `#71717a` | Timestamps, placeholders, inactive text |
+| `--accent` | `#ff42f2` | `#ff42f2` | Signature Uwebly magenta brand accent |
+| `--border` | `#e0e0e0` | `#333333` | Standard flat border across all elements |
+| `--danger` | `#ff4757` | `#ff4757` | Destructive buttons, error badges |
+| `--danger-hover` | `#ff2222` | `#ff2222` | Hover state for destructive actions |
+| `--radius-xs` | `4px` | Small tags and badges |
+| `--radius-sm` | `8px` | Buttons, dropdown items, inputs |
+| `--radius-md` | `12px` | Standard cards, accordions, dropdowns |
+| `--radius-lg` | `16px` | Modals, dialogue boxes |
+| `--radius-xl` | `24px` | BottomSheet top corners, drawers |
+| `--radius-avatar` | `40%` | Official BMDU squircle avatar standard |
+
+---
+
+## Component Reference & HTML Patterns
+
+### 1. Standard Modal & Dialogs
+Centered dialog with backdrop blur, smooth scale-in animation, and flat borders.
+
+```html
+<!-- Trigger -->
+<button data-uwebly-toggle="modal" data-uwebly-target="#confirmModal" class="uwebly-modal-btn btn-primary">
+  Open Dialog
+</button>
+
+<!-- Modal Container -->
+<div id="confirmModal" class="uwebly-modal-overlay">
+  <div class="uwebly-modal modal-md">
+    <div class="uwebly-modal-header">
+      <h3 class="uwebly-modal-title">Confirm Action</h3>
+      <button class="uwebly-modal-close" data-uwebly-dismiss="modal">&times;</button>
+    </div>
+    <div class="uwebly-modal-body">
+      <p>Are you sure you want to proceed with this operation?</p>
+    </div>
+    <div class="uwebly-modal-footer">
+      <button class="uwebly-modal-btn btn-cancel" data-uwebly-dismiss="modal">Cancel</button>
+      <button class="uwebly-modal-btn btn-primary">Confirm</button>
+    </div>
+  </div>
+</div>
+```
+*Modifiers*: `.modal-sm` (360px), `.modal-md` (480px), `.modal-lg` (680px), `.modal-xl` (840px).
+
+---
+
+### 2. Mobile BottomSheet Drawer
+Slide-up drawer designed for mobile touch devices with a grab handle bar and 24px top radius.
+
+```html
+<!-- Trigger -->
+<button data-uwebly-toggle="bottomsheet" data-uwebly-target="#actionSheet" class="notfound-button">
+  Open Actions
+</button>
+
+<!-- BottomSheet Container -->
+<div id="actionSheet" class="uwebly-bottomsheet-overlay">
+  <div class="uwebly-bottomsheet">
+    <div class="uwebly-bottomsheet-handle"></div>
+    <div class="uwebly-bottomsheet-header">
+      <h3 class="uwebly-bottomsheet-title">Quick Actions</h3>
+      <button class="uwebly-bottomsheet-close" data-uwebly-dismiss="bottomsheet">&times;</button>
+    </div>
+    <div class="uwebly-bottomsheet-body">
+      <button class="uwebly-dropdown-item">Share Link</button>
+      <button class="uwebly-dropdown-item">Copy URL</button>
+    </div>
+    <div class="uwebly-bottomsheet-footer">
+      <button class="uwebly-modal-btn btn-cancel" data-uwebly-dismiss="bottomsheet">Close</button>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+### 3. Multi-Directional Scale Dropdown
+Contextual popup menu with directional scale animations (`origin-*`) without box-shadow.
+
+```html
+<!-- 1. Top-Left Origin (Scales from top-left, opens downwards) -->
+<div class="uwebly-dropdown">
+  <button data-uwebly-toggle="dropdown" class="notfound-button">Menu ▾</button>
+  <div class="uwebly-dropdown-menu origin-top-left">
+    <div class="uwebly-dropdown-header">Account</div>
+    <a href="#profile" class="uwebly-dropdown-item">Profile</a>
+    <a href="#settings" class="uwebly-dropdown-item">Settings</a>
+    <div class="uwebly-dropdown-divider"></div>
+    <button class="uwebly-dropdown-item danger">Sign Out</button>
+  </div>
+</div>
+
+<!-- Available Origin Classes:
+  .origin-top-left     (Opens down, expands from top-left)
+  .origin-top-right    (Opens down, expands from top-right)
+  .origin-bottom-left  (Opens up, expands from bottom-left)
+  .origin-bottom-right (Opens up, expands from bottom-right)
+-->
+```
+
+---
+
+### 4. Accordion / Collapse (FAQ)
+Expandable accordion with 180° chevron rotation.
+
+```html
+<div class="uwebly-accordion">
+  <!-- Open Item -->
+  <div class="uwebly-accordion-item open">
+    <button class="uwebly-accordion-header" data-uwebly-toggle="accordion">
+      <span class="uwebly-accordion-title">What is Bmdu Ecosystem?</span>
+      <svg class="uwebly-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    </button>
+    <div class="uwebly-accordion-collapse">
+      <div class="uwebly-accordion-body">
+        High-performance web apps built on flat zero-shadow architecture.
+      </div>
+    </div>
+  </div>
+
+  <!-- Closed Item -->
+  <div class="uwebly-accordion-item">
+    <button class="uwebly-accordion-header" data-uwebly-toggle="accordion">
+      <span class="uwebly-accordion-title">How do I toggle themes?</span>
+      <svg class="uwebly-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    </button>
+    <div class="uwebly-accordion-collapse">
+      <div class="uwebly-accordion-body">
+        Add data-uwebly-theme="toggle" to any button to automatically toggle light/dark theme.
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+### 5. Buttons & Chips
+```html
+<!-- Primary / Login Button -->
+<button class="ee-login-btn">Log In</button>
+
+<!-- Interactive Follow Button -->
+<button class="sidebar-follow-btn">Follow</button>
+<button class="sidebar-follow-btn following">Following</button>
+
+<!-- Neutral Secondary Button -->
+<button class="notfound-button">Secondary Action</button>
+
+<!-- Destructive Danger Button -->
+<button class="report-btn-submit">Delete Post</button>
+```
+
+---
+
+### 6. User Squircle Avatar & Mention Dropdown
+```html
+<!-- Squircle Avatar (40% radius) -->
+<img src="/avatar.jpg" alt="User" style="width: 40px; height: 40px; border-radius: 40%; border: 1px solid var(--border);" />
+
+<!-- Search Input Wrapper -->
+<div class="search-wrapper">
+  <span class="search-icon">🔍</span>
+  <input type="text" placeholder="Search..." />
+</div>
+
+<!-- Mention List Item -->
+<div class="mention-item active">
+  <img src="/avatar.jpg" class="mention-avatar" alt="Avatar" />
+  <div class="mention-info">
+    <span class="mention-name">UFauzan</span>
+    <span class="mention-usertag">@umarfauzan11</span>
+  </div>
+</div>
+```
+
+---
+
+### 7. Interactive Theme Toggle Button
+```html
+<!-- Simply add data-uwebly-theme="toggle" -->
+<button data-uwebly-theme="toggle" class="notfound-button">
+  Toggle Theme
+</button>
+```
+
+---
+
+## JavaScript API (uwebly.min.js)
+
+The global `window.Uwebly` helper provides programmatic control:
+
+```javascript
+// Theme
+Uwebly.setTheme('dark'); // 'light' | 'dark'
+Uwebly.getTheme();       // returns current theme
+
+// Modal
+Uwebly.showModal('#myModal');
+Uwebly.hideModal('#myModal');
+
+// BottomSheet
+Uwebly.showBottomSheet('#mySheet');
+Uwebly.hideBottomSheet('#mySheet');
+
+// Toast Notification
+Uwebly.toast('Changes saved successfully!', 3000);
+```

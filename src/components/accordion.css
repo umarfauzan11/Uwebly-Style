@@ -1,0 +1,85 @@
+/* ============================================
+   BMDU ACCORDION / COLLAPSE COMPONENT
+   Flat Border, Chevron Rotation, Smooth Expand
+   ============================================ */
+
+.uwebly-accordion {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  background: var(--card-bg);
+  box-shadow: none;
+}
+
+.uwebly-accordion-item {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease;
+}
+
+.uwebly-accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Trigger Button */
+.uwebly-accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.uwebly-accordion-header:hover {
+  background: var(--hover-bg);
+}
+
+.uwebly-accordion-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uwebly-accordion-chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+/* Open State */
+.uwebly-accordion-item.open .uwebly-accordion-chevron,
+.uwebly-accordion-item.active .uwebly-accordion-chevron {
+  transform: rotate(180deg);
+  color: var(--text-color);
+}
+
+/* Collapsible Content */
+.uwebly-accordion-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.uwebly-accordion-item.open .uwebly-accordion-collapse,
+.uwebly-accordion-item.active .uwebly-accordion-collapse {
+  max-height: 600px;
+}
+
+.uwebly-accordion-body {
+  padding: 14px 18px 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+  background: var(--bg-secondary);
+}

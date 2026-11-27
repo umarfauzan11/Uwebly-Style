@@ -35,4 +35,8 @@
 @import "./components/message-drawer.css" layer(components);
 @import "./components/camera-modal.css" layer(components);
 @import "./components/avatar-animations.css" layer(components);
+@import "./components/modal.css" layer(components);
+@import "./components/bottomsheet.css" layer(components);
+@import "./components/accordion.css" layer(components);
+@import "./components/dropdown.css" layer(components);
 @import "./components/utilities.css" layer(components);

@@ -15,7 +15,7 @@ function copyLegacyCssPlugin() {
       const mainCss = path.join(distDir, 'uwebly.min.css')
       if (fs.existsSync(mainCss)) {
         // Sematkan banner lisensi resmi BMDU di baris pertama
-        const banner = '/*! Uwebly Style v3.0.0 | (c) 2026 BMDU Studio | https://style.uwebly.com */\n'
+        const banner = '/*! Uwebly Style v3.0.1 | (c) 2026 BMDU Studio | https://style.uwebly.com */\n'
         const content = fs.readFileSync(mainCss, 'utf8')
         if (!content.startsWith('/*! Uwebly Style')) {
           fs.writeFileSync(mainCss, banner + content)
@@ -25,6 +25,13 @@ function copyLegacyCssPlugin() {
         fs.copyFileSync(mainCss, path.join(distDir, 'uwebly3.min.css'))
         fs.copyFileSync(mainCss, path.join(distDir, 'uwebly2.min.css'))
         console.log('[build] Synchronized uwebly.min.css -> uwebly3.min.css & uwebly2.min.css (with license banner)')
+      }
+
+      // Sinkronisasi JS bundle jika ada
+      const mainJs = path.join(distDir, 'uwebly.min.js')
+      if (fs.existsSync(mainJs)) {
+        fs.copyFileSync(mainJs, path.join(distDir, 'uwebly3.min.js'))
+        console.log('[build] Synchronized uwebly.min.js -> uwebly3.min.js')
       }
     }
   }
@@ -38,7 +45,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: 5173,
+    port: 1121,
     host: true, // Buka akses IP lokal LAN (untuk tes via HP/tablet)
     cors: true  // Izinkan cross-origin antar localhost ports
   },
